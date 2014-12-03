@@ -27,8 +27,5 @@ phpunit.phar
 # composer vendor dir
 /vendor
 
-#web assets
-/web/assets
-
 #composer lock
 composer.lock
