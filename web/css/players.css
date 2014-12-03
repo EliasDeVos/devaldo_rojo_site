@@ -1,0 +1,321 @@
+
+.card *{
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    display: table;
+    box-sizing: border-box;
+
+    margin: 10px;
+    min-height: 180px;
+    width: 350px;
+
+    font-family: sans-serif;
+    background: #ffff;
+    border-radius: 2px;
+    box-shadow: 1px 2px 8px rgba(0,0,0,0.3);
+}
+
+.card .title {
+    margin: 15px;
+
+    font-size: 20px;
+    font-weight: normal;
+    color: #777;
+}
+
+.card .content {
+    margin: 15px;
+
+    font-size: 14px;
+    color: #999;
+}
+
+/* ----------- MEDIA ----------- */
+
+.card .media{
+    height: 150px;
+    width: 100%;
+
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+}
+
+.card .media img{
+    height: inherit;
+    width: inherit;
+}
+
+.card .media.inline{
+    display: table-cell;
+    margin-left: 10px;
+
+    height: 100%;
+    width: 170px;
+}
+
+/* ----------- ACTIONS ----------- */
+
+.card .actions{
+    margin: 0 5px;
+
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+}
+
+.card .action{
+    padding: 5px 0;
+
+    cursor: pointer;
+    list-style: none;
+    color: #33A1E5;
+}
+
+.card .action:not(:last-child){
+    border-color: #ccc;
+    border-width: 1px;
+    border-bottom-style: solid;
+}
+
+.card .actions.inline{
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 3px 0;
+
+    text-align: center;
+}
+
+.card .actions.inline .action{
+    display: table-cell;
+    padding: 2px;
+
+    border-bottom-style: none;
+}
+
+.card .actions.inline .action:not(:last-child){
+    border-right-style: solid;
+}
+
+/* ----------- MENU ----------- */
+
+.card .menu{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 100%;
+    margin-left: 7px;
+
+    min-width: 150px;
+    padding: 5px;
+
+    border-radius: 3px;
+    background-color: rgba(10,10,10,0.9);
+    font-size: 12px;
+
+    -webkit-transition: visibility 0s linear, .2s opacity ease-in;
+    -moz-transition: visibility 0s linear, .2s opacity ease-in;
+    -ms-transition: visibility 0s linear, .2s opacity ease-in;
+    -o-transition: visibility 0s linear, .2s opacity ease-in;
+    transition: visibility 0s linear, .2s opacity ease-in;
+}
+
+.card .menu.active{ visibility: visible; opacity: 1;}
+
+/* small triangle for popup */
+.card .menu:before{
+    content:'';
+    display:block;
+    width:0;
+    height:0;
+    position:absolute;
+
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right:8px solid rgba(10,10,10,0.9);
+    left:-8px;
+
+    top:7px;
+}
+
+
+.card .menu-item{
+    cursor: pointer;
+    padding: 7px;
+    list-style: none;
+    color: #aaa;
+}
+
+.card .menu-item:not(:last-child){
+    border-color: #333;
+    border-width: 1px;
+    border-bottom-style: solid;
+}
+
+/* ----------- BUTTONS ----------- */
+
+.card .btn{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 5px;
+    padding: 0 12px;
+
+    color: #444;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Lucida Grande", sans-serif;
+
+    background-color: #f5f5f5;
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.1);
+
+    cursor: pointer;
+    -webkit-transition: border .20s;
+}
+
+.card .btn:hover{
+    color: #333;
+
+    background-color: #f8f8f8;
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+
+    border: 1px solid #c6c6c6;
+
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.card .btn:active{
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+
+.card .btn:focus{
+    outline: none;
+    border: 1px solid #4d90fe;
+}
+
+.card .btn.blue,
+.card .btn.red,
+.card .btn.green{
+    color: #fff;
+}
+
+.card .btn.blue:hover,
+.card .btn.red:hover,
+.card .btn.green:hover{
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+
+.card .btn.blue:active,
+.card .btn.red:active,
+.card .btn.green:active{
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.card .btn.blue:focus,
+.card .btn.red:focus,
+.card .btn.green:focus{
+    outline: 0 #fff;
+    -webkit-box-shadow: inset 0 0 0 1px #fff;
+}
+
+.card .btn.blue{
+    background-color: #4d90fe;
+    background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+    border-color: #3079ed;
+}
+.card .btn.blue:hover{
+    background-color: #357ae8;
+    background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+    border-color: #2f5bb7;
+}
+
+.card .btn.red{
+    background-color: #d14836;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#dd4b39), to(#d14836));
+    border-color: transparent;
+}
+.card .btn.red:hover{
+    background: #D14130;
+    background: -webkit-linear-gradient(top, #DC4A38, #C53727);
+    border-color: #992a1b;
+}
+
+.card .btn.green{
+    background-color: #3A8E00;
+    background-image: -webkit-linear-gradient(top, #3C9300, #398A00);
+    border-color: #29691D;
+}
+.card .btn.green:hover{
+    background-color: #3F83F1;
+    background-image: -webkit-linear-gradient(top, #3C9300, #368200);
+    border-color: #2D6200;
+}
+
+/* ----------- TEXTBOXES ----------- */
+
+.card input.textbox{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 5px 10px;
+
+    color: #444;
+    font-size: 13px;
+    font-family: "Lucida Grande", sans-serif;
+
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.1);
+
+    -webkit-transition: border .20s;
+}
+
+.card input.textbox:focus{
+    outline: none;
+    border-color: #38E;
+}
+
+/* ----------- LISTS ----------- */
+
+.card .list-item{
+    list-style: none;
+    padding: 5px;
+    margin: 0 3px;
+}
+
+.card .list-item:not(:last-child){
+    border-bottom: 1px solid #eee;
+}
+
+/* ----------- ICONS ----------- */
+
+.card i{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.card .action i{
+    float: left;
+    margin-right: 5px;
+}
+
+.card .title i{
+    float: right;
+    margin-left: 5px;
+}
+
+/* empty icon (usually used to align multiple non-inline actions) */
+i.void{background-position: 16px 16px;}
