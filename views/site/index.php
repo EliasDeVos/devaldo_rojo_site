@@ -4,8 +4,8 @@ $this->title = 'My Yii Application';
 use yii\helpers\Html;
 
 ?>
-
-<div class="col-lg-4">
+<div class="row">
+<div class="col-lg-4 col-xs-4 col-md-4">
     <!-- Carousel
    ================================================== -->
     <h3> Info</h3>
@@ -67,4 +67,5 @@ use yii\helpers\Html;
     <!-- /.carousel -->
 
 
+</div>
 </div>
