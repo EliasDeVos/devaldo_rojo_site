@@ -10,6 +10,7 @@ namespace app\models\forms;
 
 
 use app\models\Match;
+use app\models\PlayerPresence;
 use yii\base\Model;
 
 class MatchForm extends Model{
@@ -22,12 +23,13 @@ class MatchForm extends Model{
 	public $gymId;
 	public $seasonId;
 	public $matchTime;
+    public $present;
 
 	public function rules()
 	{
 		return [
-			[['awayTeamId', 'homeTeamId', 'homeTeamGoals', 'awayTeamGoals', 'gymId', 'seasonId'], 'required'],
-			[['matchId', 'matchTime'], 'safe'],
+			[['awayTeamId', 'homeTeamId', 'gymId', 'seasonId'], 'required'],
+			[['matchId', 'matchTime','homeTeamGoals', 'awayTeamGoals', 'present'], 'safe'],
 			[['awayTeamId', 'homeTeamId', 'homeTeamGoals', 'awayTeamGoals', 'gymId', 'seasonId'], 'integer'],
 			[['awayTeamId', 'homeTeamId'], 'differentTeams'],
 		];
@@ -48,6 +50,14 @@ class MatchForm extends Model{
 			$oMatch = new Match();
 		}
 		$oMatch->attributes = $this->attributes;
+        PlayerPresence::deleteAll(['matchId' => $oMatch->matchId]);
+        foreach ($this->present as $iPlayerId)
+        {
+            $oPlayerPresence = new PlayerPresence();
+            $oPlayerPresence->playerId = $iPlayerId;
+            $oPlayerPresence->matchId = $oMatch->matchId;
+            $oPlayerPresence->save();
+        }
 		if ($oMatch->save())
 		{
 			return TRUE;

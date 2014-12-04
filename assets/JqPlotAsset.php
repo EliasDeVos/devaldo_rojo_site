@@ -25,14 +25,17 @@ class JqPlotAsset extends AssetBundle
 		'scripts/main.js',
 		'scripts/jquery.jqplot.js',
 		'scripts/excanvas.js',
-		'assets/jqplot/plugins/jqplot.barRenderer.min.js',
-		'assets/jqplot/plugins/jqplot.categoryAxisRenderer.min.js',
-		'assets/jqplot/plugins/jqplot.cursor.min.js',
-		'assets/jqplot/plugins/jqplot.ohlcRenderer.min.js',
-		'assets/jqplot/plugins/jqplot.pointLabels.min.js',
-		'assets/jqplot/plugins/jqplot.pieRenderer.min.js',
-		'assets/jqplot/plugins/jqplot.donutRenderer.min.js',
-		'scripts/tabs.js'
+		'scripts/jqplot/plugins/jqplot.barRenderer.min.js',
+		'scripts/jqplot/plugins/jqplot.categoryAxisRenderer.min.js',
+		'scripts/jqplot/plugins/jqplot.cursor.min.js',
+		'scripts/jqplot/plugins/jqplot.ohlcRenderer.min.js',
+		'scripts/jqplot/plugins/jqplot.pointLabels.min.js',
+		'scripts/jqplot/plugins/jqplot.pieRenderer.min.js',
+		'scripts/jqplot/plugins/jqplot.donutRenderer.min.js',
+        'scripts/jqplot/plugins/jqplot.dateAxisRenderer.min.js',
+        'scripts/jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js',
+        'scripts/jqplot/plugins/jqplot.canvasAxisTickRenderer.min.js',
+        'scripts/tabs.js'
 	];
 	public $depends = [
 		'yii\web\YiiAsset',

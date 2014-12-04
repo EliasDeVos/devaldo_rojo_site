@@ -23,20 +23,17 @@ class StatisticsController extends Controller {
 		$aAanwezigheden = $oTeam->getAanwezigheden();
 		$sGoals = '';
 		$sAanwezigheden = '';
-//		var_dump($aGoals);
-//		var_dump($aGoals);
-		foreach ($aGoals as $oGoal)
+		foreach ($aGoals as $sMatchTime => $oGoal)
 		{
-//			var_dump($oGoal);
 			$sGoals .= $oGoal . ',';
-//			var_dump($sGoals);
 		}
-		substr($sGoals, 0, -1);
-		foreach ($aAanwezigheden as $oAanwezigheden)
+		$sGoals = substr($sGoals, 0, -1);
+		foreach ($aAanwezigheden as $sMatchTime => $oAanwezigheden)
 		{
 			$sAanwezigheden .= $oAanwezigheden . ',';
 		}
-		substr($sAanwezigheden, 0, -1);
+		$sAanwezigheden = substr($sAanwezigheden, 0, -1);
+
 		return $this->render('index', ['aUitslagen' => $aUitslagen, 'sGoals' => $sGoals, 'sAanwezigheden' => $sAanwezigheden]);
 	}
 } 

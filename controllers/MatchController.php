@@ -12,6 +12,8 @@ namespace app\controllers;
 use app\models\forms\GoalForm;
 use app\models\forms\LoginForm;
 use app\models\forms\MatchForm;
+use app\models\forms\PlayerForm;
+use app\models\forms\PresentForm;
 use app\models\Match;
 use app\models\Player;
 use app\models\Team;
@@ -36,6 +38,7 @@ class MatchController extends Controller
 	public function actionEditMatch()
 	{
 		$aGoals = array();
+        $aPresent = array();
 		$oMatchModel = new MatchForm();
 		$iMatchId = Yii::$app->request->getQueryParam('matchId');
 		if (isset($iMatchId))
@@ -49,6 +52,11 @@ class MatchController extends Controller
 				$oGoalForm->playerId = $oGoal->playerId;
 				$aGoals[] = $oGoalForm;
 			}
+            foreach ($oMatch->playerPresence as $oPlayerPresence)
+            {
+                $aPresent[$oPlayerPresence->playerId] = $oPlayerPresence->playerId;
+            }
+            $oMatchModel->present = $aPresent;
 		}
 		return $this->render('editMatch', ['oMatchModel' => $oMatchModel, 'aGoals' => $aGoals]);
 	}

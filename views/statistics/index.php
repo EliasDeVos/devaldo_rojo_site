@@ -52,7 +52,20 @@ $(document).ready(function(){
     }
   );
 
-  var plot2 = $.jqplot ('chart2', [[{$sAanwezigheden}], [{$sGoals}]]);
+  var plot2 = $.jqplot ('chart2', [[{$sAanwezigheden}], [{$sGoals}]],
+  {
+   axes: {
+        xaxis: {
+          min: 1,
+          tick: 1
+
+        },
+        yaxis: {
+          min: 0
+        }
+      }
+  }
+  );
 
 	jQuery('.tabs .nav.nav-tabs a').on('click', function(e)  {
         var currentAttrValue = jQuery(this).attr('href');

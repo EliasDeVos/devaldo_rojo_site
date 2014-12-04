@@ -80,7 +80,7 @@ endif ?>
 
 		</div>
 
-		<div class="col-md-1">
+		<div class="col-md-1" style="padding-top: 40px">
 			<?php
 
 			if (Yii::$app->user->can('admin')) :
