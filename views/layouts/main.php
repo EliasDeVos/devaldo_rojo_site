@@ -19,6 +19,11 @@ AppAsset::register($this);
 	<?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style>.navbar-nav > li > a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            line-height: 51px;
+        }</style>
 </head>
 <body>
 
@@ -37,7 +42,7 @@ AppAsset::register($this);
 						<span class="icon-bar"></span>
 					</button>
 						<?php echo Html::a(
-							'<img src="pictures/logo/Soccer-Ball-Devil.png" width="20%"/>   Devaldo rojo',
+							'<img src="pictures/logo/Soccer-Ball-Devil.png" width="15%"/>   Devaldo rojo',
 							['site/index'],
 							['class' => 'navbar-brand']
 						); ?>
@@ -45,7 +50,7 @@ AppAsset::register($this);
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right" style="">
 						<li> <?php echo Html::a(
 								'Players',
 								['player/index']
@@ -75,7 +80,7 @@ AppAsset::register($this);
 						<?php endif;
 						if (!Yii::$app->user->isGuest) :?>
 							<li>
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="margin-top: -10px"> <img class="img-circle" src="pictures/players/<?php echo Yii::$app->user->identity->username ?>.PNG" width="25%"/> <?php echo Yii::$app->user->identity->username ?></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" > <img class="img-circle" src="pictures/players/<?php echo Yii::$app->user->identity->username ?>.PNG" width="25%"/> <?php echo Yii::$app->user->identity->username ?></a>
 								<ul class="dropdown-menu" role="menu">
 									<li> <?php echo Html::a(
 											'Logout',

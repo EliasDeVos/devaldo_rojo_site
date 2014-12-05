@@ -4,7 +4,6 @@ $this->title = 'My Yii Application';
 use yii\helpers\Html;
 
 ?>
-
 <div class="col-lg-4 col-sm-4 col-md-4">
     <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner">
@@ -54,4 +53,5 @@ use yii\helpers\Html;
     </div>
 
 
+</div>
 </div>

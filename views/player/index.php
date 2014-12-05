@@ -7,13 +7,18 @@ use kartik\widgets\StarRating;
 <div class="row">
     <?php
     foreach ($aPlayers as $oPlayer) : ?>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <div class="card">
                 <div class="title">
                     <img class="img-circle" src="pictures/players/<?php echo $oPlayer->firstName ?>.PNG" width="11%"/>
                     <?php echo $oPlayer->firstName;
                     echo ' ';
                     echo $oPlayer->lastName ?>
+
+                    <?php if ($oPlayer->isInjured) : ?>
+                        <i class="fa fa-ambulance" ></i>
+                    <?php endif;?>
+
                 </div>
                 <div class="content">
                     <label>
@@ -24,33 +29,17 @@ use kartik\widgets\StarRating;
                     <br>
                     <label>Doelpunten</label>
                     <br>
-                    8
-                    <!--<?php
-                    echo StarRating::widget([
-                        'name' => 'rating_1',
-                        'value' => $oPlayer->condition,
+                    <?php echo count($oPlayer->goals)?>
+                    <br>
+                    <label>Wedstrijden</label>
+                    <br>
+                    <?php echo count($oPlayer->matches)?>
+                    <br>
+                    <label>Rugnummer</label>
+                    <br>
+                    <?php echo $oPlayer->playerId?>
 
-                        'pluginOptions' => [
-                            'size'=>'xs',
-                            'readonly' => true,
-                            'showClear' => false,
-                            'showCaption' => false,
-                            'glyphicon' => false,
-                        ],
-                    ]);?>
-                    <?php
-                    echo StarRating::widget([
-                        'name' => 'rating_2',
-                        'value' => $oPlayer->speed,
 
-                        'pluginOptions' => [
-                            'size'=>'xs',
-                            'readonly' => true,
-                            'showClear' => false,
-                            'showCaption' => false,
-                            'glyphicon' => false,
-                        ],
-                    ]);?>-->
                 </div>
             </div>
         </div>
