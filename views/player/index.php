@@ -12,7 +12,7 @@ use kartik\widgets\StarRating;
                 <div class="card">
                     <div class="title">
                         <img class="img-circle" src="pictures/players/<?php echo $oPlayer->firstName ?>.PNG"
-                             width="11%"/>
+                             width="15%"/>
                         <?php echo $oPlayer->firstName;
                         echo ' ';
                         echo $oPlayer->lastName ?>
