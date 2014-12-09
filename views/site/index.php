@@ -4,54 +4,32 @@ $this->title = 'My Yii Application';
 use yii\helpers\Html;
 
 ?>
-<div class="col-lg-4 col-sm-4 col-md-4">
-    <div id="myCarousel" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="item active" id="home-carousel-inner">
-                <img src="pictures/carouselBackground.png" alt="">
-
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another dsdaf headline.</h1>
-
-                        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non
-                            mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <a class="btn btn-large btn-primary" href="#">Learn more</a>
-                    </div>
-                </div>
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" >
+            <div class="row table-bordered" style="height: 150px">
+                <p>Sponsors</p>
             </div>
-            <div class="item">
-                <img src="pictures/carouselBackground.png" alt="">
-
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-
-                        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non
-                            mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <a class="btn btn-large btn-primary" href="#">Learn more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="pictures/carouselBackground.png" alt="">
-
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>One more for good measure.</h1>
-
-                        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non
-                            mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
-                    </div>
-                </div>
+            <div class="row table-bordered" style="height: 150px" >
+                <p>latje trap + carousel</p>
             </div>
         </div>
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        <div class="col-lg-8 col-sm-8 col-md-8 col-xs-8">
+            <div class="row table-bordered" style="height: 400px">
+                <p>logo</p>
+            </div>
+            <div class="row table-bordered" style="height: 150px" >
+                <p>biografie</p>
+            </div>
+        </div>
+        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" >
+            <div class="row table-bordered" style="height: 150px">
+                <p>klassement</p>
+            </div>
+            <div class="row table-bordered" style="height: 150px" >
+                <p>counter next match</p>
+            </div>
+        </div>
     </div>
 
-
-</div>
 </div>
