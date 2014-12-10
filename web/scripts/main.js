@@ -1,8 +1,4 @@
-$(document).ready(function () {
-    $('[id="gewonnen"]').css("background-color", "#4DDB4D");
-    $('[id="verloren"]').css("background-color", "#FF3030");
-    $('[id="gelijk"]').css("background-color", "#FFFF33");
-});
+
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 });

@@ -13,11 +13,10 @@ use app\models\Gym;
     <div class="row">
         <?php
         foreach ($aMatches as $oMatch) :?>
-            <div class="[ col-xs-12  col-md-11 ]">
-                <ul class="event-list">
-
+            <div class="col-xs-12 col-md-11 col-sm-12  col-lg-11">
+                <ul class="event-list" >
                     <li>
-                        <time>
+                        <time class="gewonnen">
                     <span class="day"><?php
                         $datetime = new DateTime($oMatch['matchTime']);
                         echo $datetime->format('d');
@@ -31,29 +30,29 @@ use app\models\Gym;
                         </time>
                         <div class="info">
                             <div class="row">
-                                <div class="col-md-3 col-md-offset-1">
+                                <div class="col-lg-3 col-lg-offset-1 col-sm-4">
                                     <h3 class="title"><?php echo Team::findOne(['teamId' => $oMatch['homeTeamId']])->name ?></h3>
                                 </div>
                                 <div class="col-sm-1">
                                     <h3 class="title">-</h3>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-lg-3 col-lg-offset-1 col-sm-4">
                                     <h3 class="title"><?php echo Team::findOne(['teamId' => $oMatch['awayTeamId']])->name ?></h3>
                                 </div>
-                                <div class="col-md-1 col-md-offset-1 ">
+                                <div class="col-lg-1  col-sm-1 ">
                                     <h3 class="title"><?php echo $oMatch['homeTeamGoals'] ?></h3>
                                 </div>
-                                <div class="col-md-1 ">
+                                <div class="col-lg-1 col-sm-1">
                                     <h3 class="title">-</h3>
                                 </div>
-                                <div class="col-md-1">
+                                <div class="col-lg-1 col-sm-1">
                                     <h3 class="title"><?php echo $oMatch['awayTeamGoals'] ?></h3>
                                 </div>
                             </div>
-                            <br>
                             <ul>
                                 <?php $oMatch = \app\models\Match::findOne(['matchId' => $oMatch['matchId']]); ?>
-                                <li data-toggle="tooltip" data-placement="top"
+                                <li style="width:10%;"
+                                    data-toggle="tooltip" data-placement="right"
                                     title="<?php
                                     foreach ($oMatch->goals as $oPlayer) {
                                         echo \app\models\Player::findOne(['playerId' => $oPlayer->playerId])->firstName . "\n";
@@ -61,10 +60,11 @@ use app\models\Gym;
                                     ?>"><span class="fa fa-futbol-o"></span> <?php
                                     echo count($oMatch->goals);
                                     ?> </li>
-                                <li><span
+                                <li style="width:70%; margin:0 auto" >
+                                    <span
                                         class="fa fa-home"></span><?php echo '  ' . Gym::findOne(['gymId' => $oMatch->gymId])->name ?>
                                 </li>
-                                <li style="width:10%;" data-toggle="tooltip" data-placement="top"
+                                <li style="width:20%;" data-toggle="tooltip" data-placement="left"
                                     title="<?php
                                     foreach ($oMatch->playerPresence as $oPlayer) {
                                         echo \app\models\Player::findOne(['playerId' => $oPlayer->playerId])->firstName . "\n";

@@ -117,6 +117,15 @@ a.desc:after {
     text-align: center;
     text-transform: uppercase;
 }
+.event-list >li>time.gewonnen{
+     background-color: #06a928;
+ }
+.event-list >li>time.verloren{
+    background-color: #a9060a;
+}
+.event-list >li>time.gelijk{
+    background-color: #3136a9;
+}
 
 .event-list > li:nth-child(even) > time {
     background-color: rgb(165, 82, 167);
