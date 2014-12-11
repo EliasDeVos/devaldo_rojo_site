@@ -233,12 +233,15 @@ class Player extends \yii\db\ActiveRecord implements IdentityInterface
         $aHomeMatches = $oTeam->homeGames;
         usort(
             $aHomeMatches, function ($oMatchA, $oMatchB) {
-                return $oMatchA->matchTime - $oMatchB->matchTime;
+                $dMatchA = new \DateTime($oMatchA->matchTime);
+                $dMatchB = new \DateTime($oMatchB->matchTime);
+                return $dMatchA->diff($dMatchB)->format('%R%a');
             });
         usort(
             $aAwayMatches, function ($oMatchB, $oMatchA) {
-                var_dump($oMatchA->matchTime - $oMatchB->matchTime);//naar datetime steken en diff doen
-                return $oMatchA->matchTime - $oMatchB->matchTime;
+                $dMatchA = new \DateTime($oMatchA->matchTime);
+                $dMatchB = new \DateTime($oMatchB->matchTime);
+                return $dMatchA->diff($dMatchB)->format('%R%a');
             });
         $i = 0;
         do {

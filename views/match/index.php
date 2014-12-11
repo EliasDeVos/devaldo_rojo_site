@@ -16,7 +16,7 @@ use app\models\Gym;
             <div class="col-xs-12 col-md-11 col-sm-12  col-lg-11">
                 <ul class="event-list" >
                     <li>
-                        <time class="gewonnen">
+                        <time class="<?php echo $oMatch['resultaat'] ?>">
                     <span class="day"><?php
                         $datetime = new DateTime($oMatch['matchTime']);
                         echo $datetime->format('d');

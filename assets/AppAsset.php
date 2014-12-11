@@ -18,11 +18,12 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/site.css'
     ];
     public $js = [
 		'scripts/main.js',
-		'scripts/bootstrap.js'
+		'scripts/bootstrap.js',
+        'scripts/jquery.countdown-2.0.4/jquery.countdown.min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

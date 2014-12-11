@@ -30,7 +30,19 @@ class MatchController extends Controller
 		$aMatches = array();
 		foreach ($aOMatches as $oMatch) {
 			$aMatches[$oMatch->matchId] = $oMatch->attributes;
-			$aMatches[$oMatch->matchId]['resultaat'] = $oMatch->resultaatPloeg($oTeam->teamId);
+            $iResultaat = $oMatch->resultaatPloeg($oTeam->teamId);
+            if ($iResultaat == 1)
+            {
+                $aMatches[$oMatch->matchId]['resultaat'] = 'gewonnen';
+            }
+            else if ($iResultaat == -1)
+            {
+                $aMatches[$oMatch->matchId]['resultaat'] = 'verloren';
+            }
+            else
+            {
+                $aMatches[$oMatch->matchId]['resultaat'] = 'gelijk';
+            }
 		}
 		return $this->render('index', ['aMatches' => $aMatches, 'sTeamFromUser' => $oTeam->name]);
 	}
