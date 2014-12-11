@@ -8,7 +8,6 @@ use yii\helpers\Html;
     <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner">
             <div class="item active" id="home-carousel-inner">
-                <img src="pictures/carouselBackground.png" alt="">
 
                 <div class="container">
                     <div class="carousel-caption">
@@ -22,7 +21,6 @@ use yii\helpers\Html;
 
             </div>
             <div class="item">
-                <img src="pictures/carouselBackground.png" alt="">
 
                 <div class="container">
                     <div class="carousel-caption">
@@ -35,7 +33,6 @@ use yii\helpers\Html;
                 </div>
             </div>
             <div class="item">
-                <img src="pictures/carouselBackground.png" alt="">
 
                 <div class="container">
                     <div class="carousel-caption">

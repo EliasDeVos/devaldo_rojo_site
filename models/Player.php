@@ -231,36 +231,32 @@ class Player extends \yii\db\ActiveRecord implements IdentityInterface
         $oTeam = Team::findOne(['name' => 'Devaldo rojo']);
         $aAwayMatches = $oTeam->awayGames;
         $aHomeMatches = $oTeam->homeGames;
-        usort($aHomeMatches, function($oMatchA, $oMatchB)
-        {
-            return $oMatchA->matchTime - $oMatchB->matchTime;
-        });
-        usort($aAwayMatches, function($oMatchB, $oMatchA)
-        {
-            var_dump($oMatchA->matchTime - $oMatchB->matchTime);//naar datetime steken en diff doen
-            return $oMatchA->matchTime - $oMatchB->matchTime;
-        });
-        var_dump($aAwayMatches);
-        var_dump($aHomeMatches);
+        usort(
+            $aHomeMatches, function ($oMatchA, $oMatchB) {
+                return $oMatchA->matchTime - $oMatchB->matchTime;
+            });
+        usort(
+            $aAwayMatches, function ($oMatchB, $oMatchA) {
+                var_dump($oMatchA->matchTime - $oMatchB->matchTime);//naar datetime steken en diff doen
+                return $oMatchA->matchTime - $oMatchB->matchTime;
+            });
         $i = 0;
-        do{
+        do {
             $dMatchDate = new \DateTime($aAwayMatches[$i]->matchTime);
-            if ($dDateNow->diff($dMatchDate)->format('%R%a') > 0)
-            {
+            if ($dDateNow->diff($dMatchDate)->format('%R%a') > 0) {
                 $oMatchAway = $aAwayMatches[$i];
             }
             $i++;
-        }while ($dDateNow->diff($dMatchDate)->format('%R%a') > 0 && $i < count($aAwayMatches));
+        } while ($dDateNow->diff($dMatchDate)->format('%R%a') > 0 && $i < count($aAwayMatches));
         $i = 0;
 
-        do{
+        do {
             $dMatchDate = new \DateTime($aHomeMatches[$i]->matchTime);
-            if ($dDateNow->diff($dMatchDate)->format('%R%a') > 0)
-            {
+            if ($dDateNow->diff($dMatchDate)->format('%R%a') > 0) {
                 $oMatchHome = $aHomeMatches[$i];
             }
             $i++;
-        }while ($dDateNow->diff($dMatchDate)->format('%R%a') > 0 && $i < count($aHomeMatches));
+        } while ($dDateNow->diff($dMatchDate)->format('%R%a') > 0 && $i < count($aHomeMatches));
         $dAwayMatch = new \DateTime($oMatchAway->matchTime);
         $dHomeMatch = new \DateTime($oMatchHome->matchTime);
         if (($dDateNow->diff($dAwayMatch)->format('%R%a')) < ($dDateNow->diff($dHomeMatch)->format('%R%a'))) {
@@ -269,8 +265,6 @@ class Player extends \yii\db\ActiveRecord implements IdentityInterface
         else {
             $oMatch = $oMatchHome;
         }
-        var_dump($oMatch);
-        die;
         if (isset($oMatch)) {
             foreach ($oMatch->playerPresence as $oPlayerPresence) {
                 if ($oPlayerPresence->playerId = $this->playerId) {

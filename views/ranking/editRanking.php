@@ -23,7 +23,7 @@ use yii\helpers\Url;
     ?>
     <h3> Ranking </h3>
 
-    <div class="table-bordered" id="fields">
+    <div>
         <div style="padding-top: 15px">
             <?php
             foreach ($aRankings as $i => $oRanking) {
