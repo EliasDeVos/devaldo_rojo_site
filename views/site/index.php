@@ -6,7 +6,7 @@ $this->title = 'Home';
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2 col-sm-4 col-md-4 col-xs-4">
+            <div class="col-lg-2 col-md-2 ">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
@@ -50,7 +50,7 @@ $this->title = 'Home';
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 col-sm-4 col-md-4 col-xs-4">
+            <div class="col-lg-7 col-md-6">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
@@ -87,9 +87,8 @@ $this->title = 'Home';
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-lg-3 col-sm-4 col-md-4 col-xs-4">
+            <div class="col-lg-3 col-md-3 ">
                 <div class="row">
                     <div class="col-md-12 ">
                         <div class="card">

@@ -81,7 +81,7 @@ AppAsset::register($this);
 						<?php endif;
 						if (!Yii::$app->user->isGuest) :?>
 							<li>
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" > <img class="img-circle" src="pictures/players/<?php echo Yii::$app->user->identity->username ?>.PNG" width="25%"/> <?php echo Yii::$app->user->identity->username ?></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" > <img class="img-circle hidden-xs" src="pictures/players/<?php echo Yii::$app->user->identity->username ?>.PNG" width="25%"/> <?php echo Yii::$app->user->identity->username ?></a>
 								<ul class="dropdown-menu" role="menu">
 									<li> <?php echo Html::a(
 											'Logout',
