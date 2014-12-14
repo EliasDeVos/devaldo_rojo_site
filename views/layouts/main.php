@@ -24,6 +24,7 @@ AppAsset::register($this);
             padding-bottom: 10px;
             line-height: 51px;
         }</style>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
